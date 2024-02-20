@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['login'])){
+    header("location:home.php");
+	exit;
+}
+?>
 <!doctype html>
 <html>
 
@@ -15,9 +22,9 @@
             <div class="flex space-x-4">
                 <a href="#"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">HOME</a>
-                <a href="about.html"
+                <a href="about.php"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">ABOUT</a>
-                <a href="Login.html"
+                <a href="Login.php"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">LOGIN</a>
 
             </div>
@@ -33,7 +40,7 @@
                 homepage,please log in with your credentials.
             </p>
             <div class="flex justify-center">
-                <a href="Login.html"
+                <a href="Login.php"
                     class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-100">Login</a>
             </div>
         </div>

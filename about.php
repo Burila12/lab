@@ -8,13 +8,20 @@
 <body class="bg-[#f1f5f9]">
     <div class="flex justify-center m-10 bg-white rounded-xl shadow-lg h-18 p-5">
         <div class="flex flex-shrink-0 items-center">
-          <a href="index1.html"><img class="h-8 w-auto" src="uc.png" alt="UC LOGO"> </a>
+          <a href="index1.php"><img class="h-8 w-auto" src="uc.png" alt="UC LOGO"> </a>
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">HOME</a>
+            <a href="home.php" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">HOME</a>
             <a href="#" class="bg-gray-500 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium " aria-current="page">ABOUT</a>
-            <a href="login.html" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"  >LOGIN</a>
+            <?php session_start();
+             if(isset($_SESSION['login'])){
+              echo '<a href="logout.php"
+                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">LOGOUT</a>';
+             }
+             else{
+               echo '<a href="login.php" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"  >LOGIN</a>';}
+            ?>
         </div>
       </div>
  </div>
